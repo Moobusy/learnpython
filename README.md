@@ -1,2 +1,2 @@
 # learnpython
-Learn python !
+Learn python!
