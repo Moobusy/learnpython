@@ -1,7 +1,8 @@
-print('12312312')
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-for x in range(1,10):
-	print(x,'---')	
-	pass
+from app import create_app
 
-# 注释
+if __name__ == '__main__':
+	app = create_app()
+	app.run()
