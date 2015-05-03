@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Flask Register</title>
+		<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="/static/signin.css">
+	</head>
+	<body>
+		<div class="container-fluid">
+			<form action="/admin/user/do_reg" method="post" class="form form-signin">
+				<img src="/static/images/logo.png" alt="" class="form-signin-heading">
+				<input type="text" name="username" placeholder="Username" class="form-control" autocomplete="off">
+				<input type="password" name="password" placeholder="Password" class="form-control">
+				<input type="submit" class="form-control btn btn-primary" value="Sign In">
+			</form>
+		</div>
+		<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script>
+			$(function(){
+				$('.form').submit(function(){
+					var _uname = $('input[name=username]').val();
+					var _pwd = $('input[name=password]').val();
+					$.ajax({
+						url: '/admin/user/do_reg',
+						type: 'post',
+						dataType: 'text',
+						data: {username:_uname, password:_pwd},
+						success:function(data){
+							alert(data)
+							if (data=='注册成功') {
+								
+							}	
+						}
+					});
+					return false;
+				});
+			});
+		</script>
+	</body>
+</html>

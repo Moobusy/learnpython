@@ -13,16 +13,14 @@ from flask.ext.mongoengine import MongoEngine
 from app.frontend import frontend as frontend_blueprint
 from app.backend import backend as backend_blueprint
 
-def create_app(config = None):
-	"""Create a flask app with a config."""
-
+app = Flask(__name__)
+app.config.from_object('config.DevelopmentConfig')
+# mongodb
+mongo = MongoEngine(app)
 	
-	app = Flask(__name__)
-	app.config.from_object('config.DevelopmentConfig')
-
-	# mongodb
-	db = MongoEngine(app)
-
+def create_app():
+	"""Create a flask app with a config."""
+	
 	app.register_blueprint(frontend_blueprint)
 	app.register_blueprint(backend_blueprint, name = 'admin', url_prefix = '/admin')
 

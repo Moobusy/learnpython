@@ -6,6 +6,7 @@ class Config:
 
 class DevelopmentConfig(Config):
 	DEBUG = True
+	TESTING = True
 	MONGODB_SETTINGS = {
 		'db': 'docer',
 		'host': '127.0.0.1',

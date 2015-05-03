@@ -1,15 +1,10 @@
 # -*- coding: utf-8 -*-
 '''
-	Docer - frontend - views
-	~~~~~~
-	A document viewing platform.
-
-	:copyright: (c) 2015 by Docer.Org.
-	:license: MIT, see LICENSE for more details.
+	front
 '''
 
 from . import frontend
 
 @frontend.route('/')
 def hello_world():
-	return "Hello World!"
+	return "Hello World!2"
